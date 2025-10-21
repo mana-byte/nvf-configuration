@@ -1,4 +1,4 @@
-# NVF — A Playful Neovim Configuration
+# NVF — mana-byte neovim config
 
 Welcome to my NVF — a curated Neovim setup that's equal parts practical. It’s designed to be fast, modern, and friendly to both Vim veterans and curious newcomers. This README highlights the key plugins, notable settings, and the most important keymaps so you can get productive (and maybe smile a little) faster.
 

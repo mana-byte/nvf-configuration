@@ -257,10 +257,12 @@
     filetree.nvimTree.enable = true;
 
     utility = {
-      oil-nvim.enable = true;
-      oil-nvim.setupOpts = {
-        view_options = {
-          show_hidden = true;
+      oil-nvim = {
+        enable = true;
+        setupOpts = {
+          view_options = {
+            show_hidden = true;
+          };
         };
       };
       undotree.enable = true;
@@ -273,7 +275,7 @@
         };
       };
       surround.enable = true;
-      ccc =  {
+      ccc = {
         enable = true;
         mappings.quit = "q";
       };

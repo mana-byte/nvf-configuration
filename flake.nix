@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
     nvf.url = "github:notashelf/nvf";
   };
 
@@ -8,12 +9,20 @@
     self,
     nixpkgs,
     nvf,
+    flake-utils,
     ...
-  }: {
-    packages."x86_64-linux".default =
-      (nvf.lib.neovimConfiguration {
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
-        modules = [./nvf-configuration.nix];
-      }).neovim;
-  };
+  }:
+  # WARNING:  NVF only works with linux and darwin systems.
+    flake-utils.lib.eachDefaultSystem
+    (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in {
+        packages.default =
+          (nvf.lib.neovimConfiguration {
+            pkgs = pkgs;
+            modules = [./nvf-configuration.nix];
+          }).neovim;
+      }
+    );
 }

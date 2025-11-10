@@ -1,4 +1,5 @@
 {
+  description = "A Neovim configuration using NVF by notashelf and customized by mana-byte";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
@@ -12,7 +13,6 @@
     flake-utils,
     ...
   }:
-  # WARNING:  NVF only works with linux and darwin systems.
     flake-utils.lib.eachDefaultSystem
     (
       system: let

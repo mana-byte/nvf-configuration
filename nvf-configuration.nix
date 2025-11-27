@@ -308,6 +308,7 @@
           typescript = ["biome"];
           javascriptreact = ["biome"]; # eslint removed (handled by LSP diagnostics if desired)
           typescriptreact = ["biome"]; # eslint removed
+          java = ["google-java-format"];
         };
       };
     };
@@ -356,6 +357,16 @@
       lua.enable = true;
       python.enable = true;
       ts.enable = true; # Provides TypeScript/TSX; adjust if module separates ts/tsx
+      bash.enable = true;
+      java = {
+        enable = true;
+        lsp.enable = true;
+      };
+      yaml = {
+        enable = true;
+        lsp.enable = true;
+
+      };
       markdown = {
         enable = true;
         extensions.markview-nvim.enable = true;
